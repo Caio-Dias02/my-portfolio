@@ -43,26 +43,26 @@ export default function Footer() {
     <footer className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-500 rounded-full -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500 rounded-full translate-y-1/2"></div>
+        <div className="absolute top-0 left-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-purple-500 rounded-full -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-blue-500 rounded-full translate-y-1/2"></div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+          <div className="text-center sm:text-left lg:col-span-1">
+            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3 sm:mb-4">
               Caio Dias
             </h3>
-            <p className="text-gray-300">
+            <p className="text-gray-300 text-sm sm:text-base">
               Desenvolvedor Full Stack especializado em criar soluções web modernas e escaláveis.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="text-center">
-            <h4 className="text-lg font-semibold mb-4 text-purple-300">Navegação</h4>
-            <div className="space-y-2">
+          <div className="text-center sm:text-left lg:text-center">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-purple-300">Navegação</h4>
+            <div className="space-y-1 sm:space-y-2">
               {[
                 { href: "#home", label: "Home" },
                 { href: "#about", label: "Sobre" },
@@ -72,7 +72,7 @@ export default function Footer() {
                 <div key={link.href}>
                   <a 
                     href={link.href} 
-                    className="text-gray-300 hover:text-purple-300 transition-colors duration-300"
+                    className="text-gray-300 hover:text-purple-300 transition-colors duration-300 text-sm sm:text-base block"
                   >
                     {link.label}
                   </a>
@@ -82,43 +82,43 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="text-center md:text-right">
-            <h4 className="text-lg font-semibold mb-4 text-purple-300">Conecte-se</h4>
-            <div className="flex justify-center md:justify-end gap-4">
+          <div className="text-center sm:text-left lg:text-right">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-purple-300">Conecte-se</h4>
+            <div className="flex justify-center sm:justify-start lg:justify-end gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-700/50 hover:bg-purple-500/50 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-700/50 hover:bg-purple-500/50 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                   title={social.name}
                 >
-                  {social.icon}
+                  <div className="w-4 h-4 sm:w-5 sm:h-5">
+                    {social.icon}
+                  </div>
                 </a>
               ))}
             </div>
-            <p className="text-gray-400 text-sm mt-4">
+            <p className="text-gray-400 text-xs sm:text-sm mt-3 sm:mt-4">
               Vamos trabalhar juntos!
             </p>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-700/50 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-gray-700/50 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+          <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
             © 2025 Caio Dias. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <span className="text-gray-400 text-sm">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <span className="text-gray-400 text-xs sm:text-sm">
               Feito com
             </span>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2">
               <span className="text-red-400">❤️</span>
-              <span className="text-gray-400 text-sm">com</span>
-              <span className="text-blue-400 font-semibold">React.js</span>
-              <span className="text-gray-400 text-sm">+</span>
-              <span className="text-red-500 font-semibold">NestJS</span>
+              <span className="text-gray-400 text-xs sm:text-sm">por</span>
+              <span className="text-purple-400 font-semibold text-xs sm:text-sm">Caio Dias</span>
             </div>
           </div>
         </div>

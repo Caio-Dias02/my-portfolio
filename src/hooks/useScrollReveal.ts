@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 export const useScrollReveal = (options = {}) => {
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,7 +35,7 @@ export const useScrollReveal = (options = {}) => {
 };
 
 export const useScrollRevealStagger = (delay = 100) => {
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

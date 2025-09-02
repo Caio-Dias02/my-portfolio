@@ -55,69 +55,72 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/3 left-0 w-72 h-72 bg-purple-500 rounded-full -translate-x-1/2"></div>
-        <div className="absolute bottom-1/3 right-0 w-72 h-72 bg-blue-500 rounded-full translate-x-1/2"></div>
+        <div className="absolute top-1/3 left-0 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-purple-500 rounded-full -translate-x-1/2"></div>
+        <div className="absolute bottom-1/3 right-0 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-blue-500 rounded-full translate-x-1/2"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div ref={titleRef} className="text-center mb-16 scroll-reveal">
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div ref={titleRef} className="text-center mb-12 sm:mb-16 scroll-reveal">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
             Vamos Conversar?
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 sm:mb-8"></div>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto px-4">
             Estou sempre aberto a novas oportunidades e projetos interessantes. 
             Entre em contato e vamos criar algo incrível juntos!
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {contactMethods.map((method, index) => (
             <div key={index} className="scroll-reveal">
-              <Card className="group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200/50 bg-white/80 backdrop-blur-sm">
+              <Card className="group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200/50 bg-white/80 backdrop-blur-sm h-full">
               
-              <CardContent className="p-6 text-center">
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${method.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
-                  {method.icon}
+              <CardContent className="p-4 sm:p-6 text-center">
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-to-r ${method.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8">
+                    {method.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{method.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{method.value}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{method.title}</h3>
+                <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 break-all">{method.value}</p>
                 <Button 
                   asChild 
-                  className={`w-full bg-gradient-to-r ${method.color} hover:opacity-90 text-white border-0 rounded-full transition-all duration-300`}
+                  size="sm"
+                  className={`w-full bg-gradient-to-r ${method.color} hover:opacity-90 text-white border-0 rounded-full transition-all duration-300 text-xs sm:text-sm`}
                 >
                   <a href={method.link} target="_blank" rel="noopener noreferrer">
                     Contatar
                   </a>
                 </Button>
               </CardContent>
-                          </Card>
+              </Card>
             </div>
           ))}
         </div>
 
         {/* Call to action */}
-        <div ref={ctaRef} className="text-center scroll-reveal">
-          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200/50 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+        <div ref={ctaRef} className="text-center scroll-reveal px-4">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 max-w-2xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">
               Pronto para começar um projeto?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 text-sm sm:text-base">
               Tenho disponibilidade para novos projetos e adoraria discutir suas ideias. 
               Vamos transformar sua visão em realidade!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button 
                 asChild 
                 size="lg"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-6 sm:px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
               >
-                <a href="mailto:caiodias9713@gmail.com">
+                <a href="mailto:caiodias9713@gmail.com" className="flex items-center justify-center gap-2">
                   Enviar Email
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </a>
@@ -126,11 +129,11 @@ export default function Contact() {
                 asChild 
                 variant="outline" 
                 size="lg"
-                className="border-2 border-purple-400 text-purple-600 hover:bg-purple-400 hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
+                className="border-2 border-purple-400 text-purple-600 hover:bg-purple-400 hover:text-white font-semibold px-6 sm:px-8 py-3 rounded-full transition-all duration-300 text-sm sm:text-base"
               >
-                <a href="https://www.linkedin.com/in/caio-dias-755494204/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/caio-dias-755494204/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                   LinkedIn
-                  <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
                 </a>

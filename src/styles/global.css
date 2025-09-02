@@ -65,6 +65,59 @@
 }
 
 @layer utilities {
+  /* Mouse Trail Effects */
+  .mouse-trail-particle {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Typewriter Animation */
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid rgba(168, 85, 247, 0.9);
+    white-space: nowrap;
+    animation: typewriter 6s steps(19, end) infinite, blink-caret 1s step-end infinite;
+    animation-delay: 0.5s;
+    width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .typewriter {
+      border-right: 3px solid rgba(168, 85, 247, 0.9);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .typewriter {
+      border-right: 4px solid rgba(168, 85, 247, 0.9);
+    }
+  }
+
+  @keyframes typewriter {
+    0% { 
+      width: 0;
+    }
+    50% { 
+      width: 100%;
+    }
+    90% { 
+      width: 100%;
+    }
+    100% { 
+      width: 0;
+    }
+  }
+
+  @keyframes blink-caret {
+    from, to { 
+      border-right-color: transparent;
+    }
+    50% { 
+      border-right-color: rgba(168, 85, 247, 0.9);
+    }
+  }
+
   .animate-fade-in {
     animation: fadeIn 1s ease-out;
   }
