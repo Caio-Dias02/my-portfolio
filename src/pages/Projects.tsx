@@ -9,7 +9,7 @@ import portfolioImg from "../assets/meu_portfolio.png";
 const projects = [
   {
     title: "Sistema de Gestão Financeira",
-    description: "Solução moderna para controle de finanças pessoais, desenvolvida do zero com boas práticas de desenvolvimento, oferecendo dashboard interativo, controle de contas e investimentos, e relatórios detalhados para melhor gestão financeira.",
+    description: "Sistema completo para gestão financeira pessoal com dashboard interativo, controle de contas e relatórios detalhados.",
     tech: ["React 19", "NestJS 11", "TypeScript", "PostgreSQL", "Prisma", "TanStack Query", "Tailwind CSS"],
     link: null,
     image: gestaoFinanceiraImg,
@@ -18,7 +18,7 @@ const projects = [
   },
   {
     title: "MuscleUp",
-    description: "Aplicação web completa para criação, acompanhamento e gerenciamento de planos de treino, oferecendo interface intuitiva e funcionalidades para monitoramento de performance e progresso do usuário.",
+    description: "Plataforma para criar e gerenciar planos de treino com monitoramento de performance e progresso do usuário.",
     tech: ["React 19", "NestJS", "TypeScript", "PostgreSQL", "Redis", "Prisma", "TanStack Query", "Shadcn/UI"],
     link: null,
     image: muscleUpImg,
@@ -27,7 +27,7 @@ const projects = [
   },
   {
     title: "Blog Pessoal",
-    description: "Aplicação web para compartilhamento de conteúdo pessoal e profissional, permitindo criação, edição e organização de posts, com sistema de autenticação de usuários e interface moderna e responsiva.",
+    description: "Blog para compartilhar conteúdo pessoal e profissional com sistema de autenticação e interface responsiva.",
     tech: ["React 18", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "TanStack Query", "Shadcn UI"],
     link: null,
     image: blogPessoalImg,
@@ -36,7 +36,7 @@ const projects = [
   },
   {
     title: "Portfólio Pessoal",
-    description: "Aplicação web moderna para apresentação de projetos, experiências e habilidades técnicas, desenvolvida com design responsivo, navegação intuitiva e destaque para projetos full stack e de desenvolvimento profissional.",
+    description: "Portfólio responsivo para apresentar projetos e habilidades com design moderno e navegação intuitiva.",
     tech: ["React.js", "TypeScript", "Tailwind CSS", "Vite", "Shadcn/ui"],
     link: "#",
     image: portfolioImg,
