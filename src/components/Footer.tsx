@@ -40,18 +40,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-purple-500 rounded-full -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-blue-500 rounded-full translate-y-1/2"></div>
-      </div>
+    <footer className="bg-slate-900 text-white relative overflow-hidden">
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Brand */}
           <div className="text-center sm:text-left lg:col-span-1">
-            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-blue-400 mb-3 sm:mb-4">
               Caio Dias
             </h3>
             <p className="text-gray-300 text-sm sm:text-base">
@@ -61,7 +56,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="text-center sm:text-left lg:text-center">
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-purple-300">Navegação</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-blue-300">Navegação</h4>
             <div className="space-y-1 sm:space-y-2">
               {[
                 { href: "#home", label: "Home" },
@@ -72,7 +67,7 @@ export default function Footer() {
                 <div key={link.href}>
                   <a 
                     href={link.href} 
-                    className="text-gray-300 hover:text-purple-300 transition-colors duration-300 text-sm sm:text-base block"
+                    className="text-gray-300 hover:text-blue-300 transition-colors duration-300 text-sm sm:text-base block"
                   >
                     {link.label}
                   </a>
@@ -83,7 +78,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="text-center sm:text-left lg:text-right">
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-purple-300">Conecte-se</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-blue-300">Conecte-se</h4>
             <div className="flex justify-center sm:justify-start lg:justify-end gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -91,7 +86,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-700/50 hover:bg-purple-500/50 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-700/50 hover:bg-blue-500/50 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                   title={social.name}
                 >
                   <div className="w-4 h-4 sm:w-5 sm:h-5">
@@ -118,7 +113,7 @@ export default function Footer() {
             <div className="flex items-center gap-1 sm:gap-2">
               <span className="text-red-400">❤️</span>
               <span className="text-gray-400 text-xs sm:text-sm">por</span>
-              <span className="text-purple-400 font-semibold text-xs sm:text-sm">Caio Dias</span>
+              <span className="text-blue-400 font-semibold text-xs sm:text-sm">Caio Dias</span>
             </div>
           </div>
         </div>

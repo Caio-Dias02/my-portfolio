@@ -21,19 +21,14 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-purple-500 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-blue-500 rounded-full translate-x-1/2 translate-y-1/2"></div>
-      </div>
+    <section id="about" className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={titleRef} className="text-center mb-12 sm:mb-16 scroll-reveal">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-600 dark:text-blue-400">
             Sobre Mim
           </h2>
-          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 sm:mb-8"></div>
+          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-blue-500 dark:bg-blue-400 mx-auto mb-6 sm:mb-8"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
@@ -46,9 +41,9 @@ export default function About() {
                   alt="Caio Dias - Assistant Developer" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-blue-600/10"></div>
               </div>
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-sm sm:text-lg">Dev</span>
               </div>
             </div>
@@ -56,15 +51,15 @@ export default function About() {
 
           {/* Text content */}
           <div ref={textRef} className="space-y-6 lg:col-span-1 scroll-reveal-left order-2 lg:order-2">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
                 Desenvolvedor Full Stack
               </h3>
-              <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                 Especializado em desenvolvimento de aplicações web modernas e escaláveis utilizando React.js, NestJS, 
                 TypeScript e PostgreSQL. Experiência com Docker e práticas de DevOps.
               </p>
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
                 Foco em performance, segurança e experiência do usuário (UX), sempre buscando entregar 
                 soluções robustas e eficientes. Apaixonado por tecnologia e em constante aprendizado.
               </p>
@@ -74,7 +69,7 @@ export default function About() {
               {["Full Stack", "DevOps", "Escalabilidade", "Segurança", "Performance", "UX"].map((tag) => (
                 <span 
                   key={tag}
-                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-xs sm:text-sm font-medium border border-purple-200"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-xs sm:text-sm font-medium border border-blue-200 dark:border-blue-700"
                 >
                   {tag}
                 </span>
@@ -83,18 +78,18 @@ export default function About() {
           </div>
 
           {/* Skills */}
-          <div ref={skillsRef} className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 lg:col-span-1 scroll-reveal-right order-3 lg:order-3">
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-800">Habilidades Técnicas</h3>
+          <div ref={skillsRef} className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 lg:col-span-1 scroll-reveal-right order-3 lg:order-3">
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-800 dark:text-gray-100">Habilidades Técnicas</h3>
             <div className="space-y-4 sm:space-y-6">
               {skills.map((skill) => (
                 <div key={skill.name} className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-gray-700 text-sm sm:text-base">{skill.name}</span>
-                    <span className="text-xs sm:text-sm text-gray-500">{skill.level}%</span>
+                    <span className="font-semibold text-gray-700 dark:text-gray-200 text-sm sm:text-base">{skill.name}</span>
+                    <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
                   </div>
-                  <div className="h-2 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
+                  <div className="h-2 sm:h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                     <div 
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
+                      className="h-full bg-blue-500 dark:bg-blue-400 rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>
@@ -113,10 +108,10 @@ export default function About() {
             { number: "Full Stack", label: "Especialização" }
           ].map((stat, index) => (
             <div key={index} className={`text-center scroll-reveal stagger-delay-${index + 1}`}>
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-1 sm:mb-2">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium text-sm sm:text-base">{stat.label}</div>
+              <div className="text-gray-600 dark:text-gray-400 font-medium text-sm sm:text-base">{stat.label}</div>
             </div>
           ))}
         </div>

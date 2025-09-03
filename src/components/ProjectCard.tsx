@@ -27,7 +27,7 @@ export default function ProjectCard({
       className="group animate-fade-in-delay"
       style={{ animationDelay: `${index * 0.2}s` }}
     >
-      <Card className="bg-white/10 backdrop-blur-md border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:bg-white/15 overflow-hidden h-full">
+      <Card className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:bg-white/15 dark:hover:bg-gray-800/70 overflow-hidden h-full group-hover:border-blue-400/50 dark:group-hover:border-blue-400/50">
         {/* Image */}
         {image && (
           <div className="relative overflow-hidden h-40 sm:h-48 lg:h-52">
@@ -41,14 +41,14 @@ export default function ProjectCard({
             {/* Category Badge */}
             {category && (
               <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-purple-500/90 text-white text-xs font-semibold rounded-full backdrop-blur-sm">
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-500/90 text-white text-xs font-semibold rounded-full backdrop-blur-sm">
                   {category}
                 </span>
               </div>
             )}
             
             {/* Overlay on hover */}
-            <div className="absolute inset-0 bg-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <div className="flex gap-3">
                 {link && (
                   <Button 
@@ -85,13 +85,13 @@ export default function ProjectCard({
         )}
 
         <CardHeader className="pb-3 px-4 sm:px-6">
-          <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300 line-clamp-2">
+          <h3 className="text-lg sm:text-xl font-bold text-white dark:text-gray-100 group-hover:text-blue-300 transition-all duration-300 line-clamp-2 transform group-hover:translate-x-1">
             {title}
           </h3>
       </CardHeader>
 
         <CardContent className="pb-4 flex-1 px-4 sm:px-6">
-          <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-3">
+          <p className="text-gray-300 dark:text-gray-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-3 group-hover:text-gray-200 dark:group-hover:text-gray-300 transition-colors duration-300">
             {description}
           </p>
           
@@ -100,7 +100,7 @@ export default function ProjectCard({
             {tech.slice(0, 6).map((technology, techIndex) => (
               <span 
                 key={techIndex}
-                className="px-2 sm:px-3 py-1 bg-purple-500/30 text-purple-200 text-xs font-medium rounded-full border border-purple-400/30 backdrop-blur-sm"
+                className="px-2 sm:px-3 py-1 bg-blue-500/30 dark:bg-blue-600/40 text-blue-200 dark:text-blue-100 text-xs font-medium rounded-full border border-blue-400/30 dark:border-blue-500/40 backdrop-blur-sm hover:bg-blue-500/50 dark:hover:bg-blue-600/60 hover:border-blue-400/60 dark:hover:border-blue-500/70 transition-all duration-200"
               >
                 {technology}
               </span>
@@ -117,7 +117,7 @@ export default function ProjectCard({
           {link ? (
             <Button 
               asChild 
-              className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 rounded-full transition-all duration-300"
+              className="flex-1 bg-blue-500 hover:bg-blue-600 text-white border-0 rounded-full transition-all duration-300"
             >
               <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base">
                 Ver Projeto
@@ -129,7 +129,7 @@ export default function ProjectCard({
           ) : (
             <Button 
               asChild 
-              className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 rounded-full transition-all duration-300"
+              className="flex-1 bg-blue-500 hover:bg-blue-600 text-white border-0 rounded-full transition-all duration-300"
             >
               <a href={github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base">
                 Ver Código
@@ -144,7 +144,7 @@ export default function ProjectCard({
             <Button 
               asChild 
               variant="outline" 
-              className="border-purple-400/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-300 rounded-full px-4 transition-all duration-300"
+              className="border-blue-400/50 text-blue-300 hover:bg-blue-500/20 hover:border-blue-300 rounded-full px-4 transition-all duration-300"
             >
               <a href={github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                 <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">

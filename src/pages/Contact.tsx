@@ -50,25 +50,20 @@ export default function Contact() {
       title: "Instagram",
       value: "@caio.diasdev",
       link: "https://www.instagram.com/caio.diasdev/",
-      color: "from-pink-500 to-purple-600"
+      color: "from-blue-500 to-blue-600"
     }
   ];
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/3 left-0 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-purple-500 rounded-full -translate-x-1/2"></div>
-        <div className="absolute bottom-1/3 right-0 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-blue-500 rounded-full translate-x-1/2"></div>
-      </div>
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={titleRef} className="text-center mb-12 sm:mb-16 scroll-reveal">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-600 dark:text-blue-400">
             Vamos Conversar?
           </h2>
-          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 sm:mb-8"></div>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto px-4">
+          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-blue-500 dark:bg-blue-400 mx-auto mb-6 sm:mb-8"></div>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto px-4">
             Estou sempre aberto a novas oportunidades e projetos interessantes. 
             Entre em contato e vamos criar algo incrível juntos!
           </p>
@@ -77,20 +72,20 @@ export default function Contact() {
         <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {contactMethods.map((method, index) => (
             <div key={index} className="scroll-reveal">
-              <Card className="group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200/50 bg-white/80 backdrop-blur-sm h-full">
+              <Card className="group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200/50 dark:border-gray-700/50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm h-full">
               
               <CardContent className="p-4 sm:p-6 text-center">
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-to-r ${method.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-to-r ${method.color === 'from-pink-500 to-purple-600' ? 'from-blue-500 to-blue-600' : method.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
                   <div className="w-6 h-6 sm:w-8 sm:h-8">
                     {method.icon}
                   </div>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{method.title}</h3>
-                <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 break-all">{method.value}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">{method.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 break-all">{method.value}</p>
                 <Button 
                   asChild 
                   size="sm"
-                  className={`w-full bg-gradient-to-r ${method.color} hover:opacity-90 text-white border-0 rounded-full transition-all duration-300 text-xs sm:text-sm`}
+                  className={`w-full bg-gradient-to-r ${method.color === 'from-pink-500 to-purple-600' ? 'from-blue-500 to-blue-600' : method.color} hover:opacity-90 text-white border-0 rounded-full transition-all duration-300 text-xs sm:text-sm`}
                 >
                   <a href={method.link} target="_blank" rel="noopener noreferrer">
                     Contatar
@@ -104,11 +99,11 @@ export default function Contact() {
 
         {/* Call to action */}
         <div ref={ctaRef} className="text-center scroll-reveal px-4">
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 max-w-2xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 max-w-2xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
               Pronto para começar um projeto?
             </h3>
-            <p className="text-gray-600 mb-6 text-sm sm:text-base">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm sm:text-base">
               Tenho disponibilidade para novos projetos e adoraria discutir suas ideias. 
               Vamos transformar sua visão em realidade!
             </p>
@@ -116,7 +111,7 @@ export default function Contact() {
               <Button 
                 asChild 
                 size="lg"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-6 sm:px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+                className="bg-blue-500 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white font-semibold px-6 sm:px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base btn-animate focus-ring"
               >
                 <a href="mailto:caiodias9713@gmail.com" className="flex items-center justify-center gap-2">
                   Enviar Email
@@ -129,7 +124,7 @@ export default function Contact() {
                 asChild 
                 variant="outline" 
                 size="lg"
-                className="border-2 border-purple-400 text-purple-600 hover:bg-purple-400 hover:text-white font-semibold px-6 sm:px-8 py-3 rounded-full transition-all duration-300 text-sm sm:text-base"
+                className="border-2 border-blue-400 dark:border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-400 dark:hover:bg-blue-500 hover:text-white font-semibold px-6 sm:px-8 py-3 rounded-full transition-all duration-300 text-sm sm:text-base btn-animate focus-ring"
               >
                 <a href="https://www.linkedin.com/in/caio-dias-755494204/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                   LinkedIn
