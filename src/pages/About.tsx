@@ -1,7 +1,9 @@
 
 import { useScrollReveal, useScrollRevealStagger } from "../hooks/useScrollReveal";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
   const titleRef = useScrollReveal();
   const textRef = useScrollReveal();
   const skillsRef = useScrollReveal();
@@ -24,7 +26,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={titleRef} className="text-center mb-12 sm:mb-16 scroll-reveal">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-600">
-            Sobre Mim
+            {t('about.title')}
           </h2>
           <div className="w-16 sm:w-20 lg:w-24 h-1 bg-blue-500 mx-auto mb-6 sm:mb-8"></div>
         </div>
@@ -34,22 +36,17 @@ export default function About() {
           <div ref={textRef} className="space-y-6 scroll-reveal-left order-1">
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">
-                Desenvolvedor Full Stack
+                {t('about.description')}
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                Especializado em desenvolvimento de aplicações web modernas e escaláveis utilizando React.js, NestJS, 
-                TypeScript e PostgreSQL. Experiência com Docker e práticas de DevOps.
-              </p>
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                Foco em performance, segurança e experiência do usuário (UX), sempre buscando entregar 
-                soluções robustas e eficientes. Apaixonado por tecnologia e em constante aprendizado.
+                {t('about.intro')}
               </p>
             </div>
           </div>
 
           {/* Skills */}
           <div ref={skillsRef} className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 scroll-reveal-right order-2">
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-800">Habilidades Técnicas</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-800">{t('about.skills')}</h3>
             <div className="space-y-4 sm:space-y-6">
               {skills.map((skill) => (
                 <div key={skill.name} className="space-y-2">
@@ -72,7 +69,7 @@ export default function About() {
         {/* Stats section */}
         <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16">
           {[
-            { number: "2025", label: "Carreira Atual" },
+            { number: "2025", label: t('about.experience') },
             { number: "32+", label: "Repositórios" },
             { number: "8+", label: "Tecnologias" },
             { number: "Full Stack", label: "Especialização" }

@@ -1,5 +1,8 @@
 
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -50,19 +53,19 @@ export default function Footer() {
               Caio Dias
             </h3>
             <p className="text-gray-300 text-sm sm:text-base">
-              Desenvolvedor Full Stack especializado em criar soluções web modernas e escaláveis.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="text-center sm:text-left lg:text-center">
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-blue-300">Navegação</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-blue-300">{t('footer.navigation')}</h4>
             <div className="space-y-1 sm:space-y-2">
               {[
-                { href: "#home", label: "Home" },
-                { href: "#about", label: "Sobre" },
-                { href: "#projects", label: "Projetos" },
-                { href: "#contact", label: "Contato" }
+                { href: "#home", label: t('nav.home') },
+                { href: "#about", label: t('nav.about') },
+                { href: "#projects", label: t('nav.projects') },
+                { href: "#contact", label: t('nav.contact') }
               ].map((link) => (
                 <div key={link.href}>
                   <a 
@@ -78,7 +81,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="text-center sm:text-left lg:text-right">
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-blue-300">Conecte-se</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-blue-300">{t('footer.connect')}</h4>
             <div className="flex justify-center sm:justify-start lg:justify-end gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -96,7 +99,7 @@ export default function Footer() {
               ))}
             </div>
             <p className="text-gray-400 text-xs sm:text-sm mt-3 sm:mt-4">
-              Vamos trabalhar juntos!
+              {t('footer.workTogether')}
             </p>
           </div>
         </div>
@@ -104,17 +107,13 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-700/50 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
           <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
-            © 2025 Caio Dias. Todos os direitos reservados.
+            © 2025 Caio Dias. {t('footer.rights')}
           </p>
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-1 sm:gap-2">
             <span className="text-gray-400 text-xs sm:text-sm">
-              Feito com
+              {t('footer.madeWith')}
             </span>
-            <div className="flex items-center gap-1 sm:gap-2">
-              <span className="text-red-400">❤️</span>
-              <span className="text-gray-400 text-xs sm:text-sm">por</span>
-              <span className="text-blue-400 font-semibold text-xs sm:text-sm">Caio Dias</span>
-            </div>
+            <span className="text-blue-400 font-semibold text-xs sm:text-sm">Caio Dias</span>
           </div>
         </div>
       </div>

@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollReveal, useScrollRevealStagger } from "../hooks/useScrollReveal";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
   const titleRef = useScrollReveal();
   const cardsRef = useScrollRevealStagger(200);
   const ctaRef = useScrollReveal();
@@ -14,7 +16,7 @@ export default function Contact() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      title: "Email",
+      title: t('contact.info.email'),
       value: "caiodias9713@gmail.com",
       link: "mailto:caiodias9713@gmail.com",
       color: "from-red-500 to-orange-500"
@@ -60,12 +62,11 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={titleRef} className="text-center mb-12 sm:mb-16 scroll-reveal">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-600">
-            Vamos Conversar?
+            {t('contact.title')}
           </h2>
           <div className="w-16 sm:w-20 lg:w-24 h-1 bg-blue-500 mx-auto mb-6 sm:mb-8"></div>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Estou sempre aberto a novas oportunidades e projetos interessantes. 
-            Entre em contato e vamos criar algo incrível juntos!
+            {t('contact.description')}
           </p>
         </div>
 
@@ -88,7 +89,7 @@ export default function Contact() {
                   className={`w-full bg-gradient-to-r ${method.color === 'from-pink-500 to-purple-600' ? 'from-blue-500 to-blue-600' : method.color} hover:opacity-90 text-white border-0 rounded-full transition-all duration-300 text-xs sm:text-sm`}
                 >
                   <a href={method.link} target="_blank" rel="noopener noreferrer">
-                    Contatar
+                    {t('home.cta')}
                   </a>
                 </Button>
               </CardContent>
@@ -101,11 +102,10 @@ export default function Contact() {
         <div ref={ctaRef} className="text-center scroll-reveal px-4">
           <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 max-w-2xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">
-              Pronto para começar um projeto?
+              {t('contact.title')}
             </h3>
             <p className="text-gray-600 mb-6 text-sm sm:text-base">
-              Tenho disponibilidade para novos projetos e adoraria discutir suas ideias. 
-              Vamos transformar sua visão em realidade!
+              {t('contact.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button 
@@ -114,7 +114,7 @@ export default function Contact() {
                 className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 sm:px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base btn-animate focus-ring"
               >
                 <a href="mailto:caiodias9713@gmail.com" className="flex items-center justify-center gap-2">
-                  Enviar Email
+                  {t('contact.form.send')}
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>

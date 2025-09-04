@@ -1,54 +1,56 @@
 import ProjectCard from "../components/ProjectCard";
 import { useScrollReveal, useScrollRevealStagger } from "../hooks/useScrollReveal";
+import { useTranslation } from "react-i18next";
 
 import gestaoFinanceiraImg from "../assets/gestao_financeira.jpg";
 import muscleUpImg from "../assets/muscle_up.jpg";
 import blogPessoalImg from "../assets/blog_pessoal.png";
 import portfolioImg from "../assets/meu_portfolio.png";
 
-const projects = [
-  {
-    title: "Sistema de Gestão Financeira",
-    description: "Sistema completo para gestão financeira pessoal com dashboard interativo, controle de contas e relatórios detalhados.",
-    tech: ["React 19", "NestJS 11", "TypeScript", "PostgreSQL", "Prisma", "TanStack Query", "Tailwind CSS"],
-    link: null,
-    image: gestaoFinanceiraImg,
-    github: "https://github.com/Caio-Dias02/Gestao-Financeira",
-    category: "Full Stack"
-  },
-  {
-    title: "MuscleUp",
-    description: "Plataforma para criar e gerenciar planos de treino com monitoramento de performance e progresso do usuário.",
-    tech: ["React 19", "NestJS", "TypeScript", "PostgreSQL", "Redis", "Prisma", "TanStack Query", "Shadcn/UI"],
-    link: null,
-    image: muscleUpImg,
-    github: "https://github.com/Caio-Dias02/MuscleUp",
-    category: "Full Stack"
-  },
-  {
-    title: "Blog Pessoal",
-    description: "Blog para compartilhar conteúdo pessoal e profissional com sistema de autenticação e interface responsiva.",
-    tech: ["React 18", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "TanStack Query", "Shadcn UI"],
-    link: null,
-    image: blogPessoalImg,
-    github: "https://github.com/Caio-Dias02/blog_pessoal",
-    category: "Full Stack"
-  },
-  {
-    title: "Portfólio Pessoal",
-    description: "Portfólio responsivo para apresentar projetos e habilidades com design moderno e navegação intuitiva.",
-    tech: ["React.js", "TypeScript", "Tailwind CSS", "Vite", "Shadcn/ui"],
-    link: "#",
-    image: portfolioImg,
-    github: "https://github.com/Caio-Dias02/my-portfolio",
-    category: "Portfolio"
-  }
-];
-
 export default function Projects() {
+  const { t } = useTranslation();
   const titleRef = useScrollReveal();
   const projectsRef = useScrollRevealStagger(150);
   const ctaRef = useScrollReveal();
+
+  const projects = [
+    {
+      title: t('projects.project1.title'),
+      description: t('projects.project1.description'),
+      tech: ["React 19", "NestJS 11", "TypeScript", "PostgreSQL", "Prisma", "TanStack Query", "Tailwind CSS"],
+      link: null,
+      image: gestaoFinanceiraImg,
+      github: "https://github.com/Caio-Dias02/Gestao-Financeira",
+      category: "Full Stack"
+    },
+    {
+      title: t('projects.project2.title'),
+      description: t('projects.project2.description'),
+      tech: ["React 19", "NestJS", "TypeScript", "PostgreSQL", "Redis", "Prisma", "TanStack Query", "Shadcn/UI"],
+      link: null,
+      image: muscleUpImg,
+      github: "https://github.com/Caio-Dias02/MuscleUp",
+      category: "Full Stack"
+    },
+    {
+      title: t('projects.project3.title'),
+      description: t('projects.project3.description'),
+      tech: ["React 18", "NestJS", "TypeScript", "Prisma", "PostgreSQL", "TanStack Query", "Shadcn UI"],
+      link: null,
+      image: blogPessoalImg,
+      github: "https://github.com/Caio-Dias02/blog_pessoal",
+      category: "Full Stack"
+    },
+    {
+      title: t('projects.project4.title'),
+      description: t('projects.project4.description'),
+      tech: ["React.js", "TypeScript", "Tailwind CSS", "Vite", "Shadcn/ui"],
+      link: "#",
+      image: portfolioImg,
+      github: "https://github.com/Caio-Dias02/my-portfolio",
+      category: "Portfolio"
+    }
+  ];
 
   return (
     <section id="projects" className="py-16 sm:py-20 lg:py-24 bg-slate-900 relative overflow-hidden">
@@ -56,11 +58,11 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={titleRef} className="text-center mb-12 sm:mb-16 lg:mb-20 scroll-reveal">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">
-            Meus Projetos
+            {t('projects.title')}
           </h2>
           <div className="w-16 sm:w-20 lg:w-24 h-1 bg-blue-500 mx-auto mb-6 sm:mb-8"></div>
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-xs sm:max-w-2xl lg:max-w-3xl mx-auto px-4">
-            Uma seleção dos meus trabalhos mais recentes, demonstrando diferentes tecnologias e abordagens de desenvolvimento
+            {t('projects.description')}
           </p>
         </div>
 
@@ -73,16 +75,17 @@ export default function Projects() {
         </div>
 
         <div ref={ctaRef} className="text-center mt-12 sm:mt-16 scroll-reveal px-4">
-          <p className="text-gray-400 mb-6 text-sm sm:text-base">Interessado em ver mais projetos?</p>
+          <p className="text-gray-400 mb-6 text-sm sm:text-base">{t('projects.cta')}</p>
           <a 
             href="#contact" 
             className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 sm:px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
           >
-            Vamos conversar
+            {t('projects.contact')}
             <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
+          
         </div>
       </div>
     </section>

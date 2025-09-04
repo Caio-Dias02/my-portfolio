@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitch from "./LanguageSwitch";
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -15,10 +18,10 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { href: "#home", label: "Home" },
-    { href: "#projects", label: "Projetos" },
-    { href: "#about", label: "Sobre" },
-    { href: "#contact", label: "Contato" }
+    { href: "#home", label: t('nav.home') },
+    { href: "#projects", label: t('nav.projects') },
+    { href: "#about", label: t('nav.about') },
+    { href: "#contact", label: t('nav.contact') }
   ];
 
   const handleMobileNavClick = () => {
@@ -48,6 +51,7 @@ export default function Navbar() {
               <a href={item.href}>{item.label}</a>
             </Button>
           ))}
+          <LanguageSwitch />
         </div>
         
         {/* Mobile menu button */}
@@ -84,6 +88,9 @@ export default function Navbar() {
                 <a href={item.href} className="block px-4 py-2">{item.label}</a>
               </Button>
             ))}
+            <div className="pt-2 border-t border-slate-700/50 mt-4">
+              <LanguageSwitch />
+            </div>
           </div>
         </div>
       )}
