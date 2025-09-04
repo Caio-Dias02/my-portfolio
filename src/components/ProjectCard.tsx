@@ -17,10 +17,8 @@ export default function ProjectCard({
   title, 
   description, 
   tech, 
-  link, 
   image, 
   github, 
-  category, 
   index = 0 
 }: ProjectCardProps) {
   const { t } = useTranslation();
